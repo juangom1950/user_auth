@@ -19,3 +19,6 @@
 20220211	19:36:29	8c80a813-f7f1-4c8c-a924-44ad6551640e	POST	undefined	/employees
 20220212	10:09:44	9be93012-a1f1-4164-bdde-996e799556b1	POST	undefined	/auth
 20220212	10:16:58	3f5ab8a8-e70e-4a75-9116-62e479f6e00b	GET	undefined	/refresh
+20220212	14:50:58	e3ca722c-21e9-478e-89bf-11c6f31b3ed7	POST	undefined	/auth
+20220212	14:52:56	e359f2a3-a7d7-40cd-9e88-f59321e467bf	GET	undefined	/logout
+20220212	14:57:16	c3c17252-c5b2-4a9b-be73-e1656bf8727c	GET	undefined	/refresh

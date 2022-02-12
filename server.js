@@ -33,6 +33,7 @@ app.use('/auth', require('./routes/auth'));
 // This will receive the refresh cookie that has the refresh Token and this 
 // will issue another access token ones the Access Token has expired.
 app.use('/refresh', require('./routes/refresh'));
+app.use('/logout', require('./routes/logout'));
 
 app.use(verifyJWT);
 app.use('/employees', require('./routes/api/employees'));

@@ -8,9 +8,9 @@ const usersDb = {
 // Used to access the json files that we are using to simulate the Database
 // This will be replace by mongo or postgress in the future.
 const fsPromises = require('fs').promises;
-const path = require('pagh');
+const path = require('path');
 
-const handleLogout = (req, res) => {
+const handleLogout = async (req, res) => {
   //On client also delete accesToken
 
   // This cookie has been created when you did the authentication

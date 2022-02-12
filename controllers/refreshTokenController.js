@@ -17,7 +17,7 @@ const handleRefreshToken = (req, res) => {
     // 401 unauthorize
     return res.sendStatus(401);
   }
-  console.log(cookies.jwt);
+  //console.log(cookies.jwt);
   const refreshToken = cookies.jwt;
 
   const foundUser = usersDb.users.find((person) => person.refreshToken === refreshToken);
