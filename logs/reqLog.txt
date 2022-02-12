@@ -17,3 +17,5 @@
 20220211	19:34:21	aedd5a03-5c80-4203-b3a4-da4a07d3c127	POST	undefined	/employees
 20220211	19:34:43	558d9a03-f71c-4b23-aad0-f753a834e684	GET	undefined	/employees
 20220211	19:36:29	8c80a813-f7f1-4c8c-a924-44ad6551640e	POST	undefined	/employees
+20220212	10:09:44	9be93012-a1f1-4164-bdde-996e799556b1	POST	undefined	/auth
+20220212	10:16:58	3f5ab8a8-e70e-4a75-9116-62e479f6e00b	GET	undefined	/refresh

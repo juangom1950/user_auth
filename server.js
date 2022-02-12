@@ -6,6 +6,7 @@ const corsOptions = require('./config/corsOptions');
 const { logger } = require('./middleware/logEvents');
 const errorHandler = require('./middleware/errorHandler');
 const cookieParser = require('cookie-parser');
+const verifyJWT = require('./middleware/verifyJWT');
 const PORT = process.env.PORT || 3500;
 
 // custom middleware logger
@@ -29,6 +30,11 @@ app.use('/', express.static(path.join(__dirname, '/public')));
 app.use('/', require('./routes/root'));
 app.use('/register', require('./routes/register'));
 app.use('/auth', require('./routes/auth'));
+// This will receive the refresh cookie that has the refresh Token and this 
+// will issue another access token ones the Access Token has expired.
+app.use('/refresh', require('./routes/refresh'));
+
+app.use(verifyJWT);
 app.use('/employees', require('./routes/api/employees'));
 
 app.all('*', (req, res) => {

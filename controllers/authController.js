@@ -52,7 +52,7 @@ const handleLogin = async (req, res) => {
     // With httpOnly it will not available to javascript.
     // This cookie is set with every request
     res.cookie('jwt', refreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000});
-    // This access token is just going to live in memeory for 15 min
+    // This access token is just going to live in memeory for 30s
     res.json({ accessToken });
   } else {
     res.sendStatus(401);

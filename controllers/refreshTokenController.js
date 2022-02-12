@@ -10,6 +10,7 @@ const { dirname } = require("path");
 require('dotenv').config();
 
 const handleRefreshToken = (req, res) => {
+  // This cookie has been created when you did the authentication
   const cookies = req.cookies;
   // If do we have cookies check jwt
   if (!cookies?.jwt) {
@@ -27,12 +28,15 @@ const handleRefreshToken = (req, res) => {
     refreshToken,
     process.env.REFRESH_TOKEN_SECRET,
     (err, decoded) => {
+
       if (err || foundUser.username !== decoded.username) return res.sendStatus(403);
+      // Here we are creating a new Access Token
       const accessToken = jwt.sign(
         { "username": decoded.username},
         process.env.REFRESH_TOKEN_SECRET,
         { expiresIn: '30s'}
       );
+
       res.json({ accessToken })
     }
   )
