@@ -25,7 +25,7 @@ const handleLogout = async (req, res) => {
   // Is refreshToken in db?
   const foundUser = usersDb.users.find((person) => person.refreshToken === refreshToken);
   if (!foundUser) {
-    res.clearCookie('jwt', { httpOnly: true, maxAge: 24 * 60 * 60 * 1000});
+    res.clearCookie('jwt', { httpOnly: true, sameSite: 'None', secure: true });
     return res.sendStatus(204); //Succesful but not content
   }
 
@@ -40,7 +40,7 @@ const handleLogout = async (req, res) => {
     JSON.stringify(usersDb.users)
   );
 
-  res.clearCookie('jwt', { httpOnly: true, maxAge: 24 * 60 * 60 * 1000}); // secure: true - only serves on https
+  res.clearCookie('jwt', { httpOnly: true, sameSite: 'None', secure: true }); // secure: true - only serves on https
   res.sendStatus(204);
 };
 
