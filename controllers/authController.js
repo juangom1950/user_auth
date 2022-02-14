@@ -25,6 +25,9 @@ const handleLogin = async (req, res) => {
   // evaluate password
   const match = await bcrypt.compare(pwd, foundUser.password);
   if (match) {
+    // The Object.values() method returns an array of a given object's own enumerable property values
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Object/values
+    // It returns an array of values of the properties in the object.
     const roles = Object.values(foundUser.roles);
     // create JWTs ones we had authorize the user above.
     // This will be only saved in memeory

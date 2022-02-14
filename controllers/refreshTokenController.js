@@ -5,9 +5,9 @@ const usersDb = {
   },
 };
 
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 const { dirname } = require("path");
-require('dotenv').config();
+require("dotenv").config();
 
 const handleRefreshToken = (req, res) => {
   // This cookie has been created when you did the authentication
@@ -20,27 +20,29 @@ const handleRefreshToken = (req, res) => {
   //console.log(cookies.jwt);
   const refreshToken = cookies.jwt;
 
-  const foundUser = usersDb.users.find((person) => person.refreshToken === refreshToken);
+  const foundUser = usersDb.users.find(
+    (person) => person.refreshToken === refreshToken
+  );
   if (!foundUser) return res.sendStatus(403); //Forbiden
 
   // evaluate jwt
-  jwt.verify(
-    refreshToken,
-    process.env.REFRESH_TOKEN_SECRET,
-    (err, decoded) => {
+  jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
+    if (err || foundUser.username !== decoded.username)
+      return res.sendStatus(403);
+    const roles = Object.values(foundUser.roles);
+    // Here we are creating a new Access Token
+    const accessToken = jwt.sign(
+      { userInfo: {
+          username: decoded.username,
+          roles: roles
+        },
+      },
+      process.env.REFRESH_TOKEN_SECRET,
+      { expiresIn: "30s" }
+    );
 
-      if (err || foundUser.username !== decoded.username) return res.sendStatus(403);
-      // Here we are creating a new Access Token
-      const accessToken = jwt.sign(
-        { "username": decoded.username},
-        process.env.REFRESH_TOKEN_SECRET,
-        { expiresIn: '30s'}
-      );
-
-      res.json({ accessToken })
-    }
-  )
-  
+    res.json({ accessToken });
+  });
 };
 
-module.exports = { handleRefreshToken }
+module.exports = { handleRefreshToken };
