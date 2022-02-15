@@ -33,7 +33,7 @@ const handleLogin = async (req, res) => {
     // This will be only saved in memeory
     const accessToken = jwt.sign(
       {
-        UserInfo: {
+        userInfo: {
           username: foundUser.username,
           roles: roles,
         },
@@ -65,12 +65,14 @@ const handleLogin = async (req, res) => {
     // This cookie is set with every request
     res.cookie("jwt", refreshToken, {
       httpOnly: true,
+      // This is only used in production. 
+      // This need to be deleted when testing with thunderclient
       secure: true,
       sameSite: "None",
       maxAge: 24 * 60 * 60 * 1000,
     });
     // This access token is just going to live in memeory for 30s
-    res.json({ accessToken });
+    res.json({ accessToken, refreshToken });
   } else {
     res.sendStatus(401);
   }

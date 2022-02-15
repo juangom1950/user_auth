@@ -3,4 +3,4 @@ const ROLES_LIST = {
   Editor: 1984,
   User: 2001,
 };
-module.esports = ROLES_LIST;
+module.exports = ROLES_LIST;
