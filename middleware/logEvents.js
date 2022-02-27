@@ -21,6 +21,7 @@ const logEvents = async (message, logName) => {
 }
 
 const logger = (req, res, next) => {
+    // We tell  what file to create or write to (reqLog.txt)
     logEvents(`${req.method}\t${req.headers.origin}\t${req.url}`, 'reqLog.txt');
     console.log(`${req.method} ${req.path}`);
     next();

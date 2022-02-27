@@ -59,3 +59,12 @@
 20220214	20:19:56	0c55d005-8e24-4c49-8b13-61ba29fa092b	POST	undefined	/auth
 20220214	20:20:13	50a2e976-1615-4b4c-85f4-421e3e166d9e	POST	undefined	/employees
 20220214	20:20:21	d6f978bc-7eba-47f3-bc93-6286fa6b4b8b	DELETE	undefined	/employees
+20220223	19:29:44	f4631dd8-4abf-4823-9d9e-f8a29cf3a565	GET	undefined	/
+20220223	19:29:45	d22ea6ad-a32c-4d7e-839f-30a614e9db04	GET	undefined	/css/style.css
+20220223	19:29:45	a2dcc22d-e8c5-4af8-959f-2370c7587236	GET	undefined	/favicon.ico
+20220223	19:30:09	3a729a5c-92a5-4aea-8a83-3a87d8999157	GET	undefined	/
+20220223	19:30:09	df317b91-7811-49b8-a7eb-e44d80ee67d4	GET	undefined	/css/style.css
+20220223	19:30:09	def24227-549d-4553-99a8-c3d1779160c3	GET	undefined	/favicon.ico
+20220224	11:05:58	3ab98ffa-7e5d-4371-b842-e4c1a03f7d9a	GET	undefined	/
+20220224	11:05:58	24611dd6-b992-4b51-8b15-bcee45094af8	GET	undefined	/css/style.css
+20220224	11:05:58	61e22fae-e3e7-41b1-9d15-deec7eba1152	GET	undefined	/favicon.ico
