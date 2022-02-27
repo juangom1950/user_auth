@@ -6,8 +6,6 @@ const usersDb = {
 };
 
 const jwt = require("jsonwebtoken");
-const { dirname } = require("path");
-require("dotenv").config();
 
 const handleRefreshToken = (req, res) => {
   // This cookie has been created when you did the authentication

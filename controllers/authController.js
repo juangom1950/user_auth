@@ -8,7 +8,6 @@ const bcrypt = require("bcrypt");
 
 const jwt = require("jsonwebtoken");
 const { dirname } = require("path");
-require("dotenv").config();
 // We are using the file system because we aren't connected to Mongo
 const fsPromises = require("fs").promises;
 const path = require("path");
