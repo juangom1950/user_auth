@@ -60,7 +60,7 @@ const handleLogin = async (req, res) => {
       path.join(__dirname, "..", "model", "users.json"),
       JSON.stringify(usersDb.users)
     );
-    // With httpOnly it will not available to javascript.
+    // With httpOnly it will not be available to javascript.
     // This cookie is set with every request
     res.cookie("jwt", refreshToken, {
       httpOnly: true,

@@ -11,6 +11,8 @@ const handleRefreshToken = (req, res) => {
   // This cookie has been created when you did the authentication
   const cookies = req.cookies;
   // If do we have cookies check jwt
+  // This ? is called the "Optional Chaining Operator".
+  // https://www.javascripttutorial.net/es-next/javascript-optional-chaining-operator/
   if (!cookies?.jwt) {
     // 401 unauthorize
     return res.sendStatus(401);
