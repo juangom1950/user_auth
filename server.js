@@ -10,6 +10,7 @@ const errorHandler = require('./middleware/errorHandler');
 const cookieParser = require('cookie-parser');
 const verifyJWT = require('./middleware/verifyJWT');
 const credentials = require('./middleware/credentials');
+// npm i mongoose
 const mongoose = require('mongoose');
 const connectDB = require('./config/dbConn');
 const PORT = process.env.PORT || 3500;

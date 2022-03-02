@@ -68,3 +68,8 @@
 20220224	11:05:58	3ab98ffa-7e5d-4371-b842-e4c1a03f7d9a	GET	undefined	/
 20220224	11:05:58	24611dd6-b992-4b51-8b15-bcee45094af8	GET	undefined	/css/style.css
 20220224	11:05:58	61e22fae-e3e7-41b1-9d15-deec7eba1152	GET	undefined	/favicon.ico
+20220301	23:48:50	9c3cbbe1-ca6d-4d2b-8e02-6caa5b21dacb	GET	undefined	/
+20220301	23:48:50	0a90593d-a87c-490f-8b9f-122eaeac6031	GET	undefined	/css/style.css
+20220301	23:48:50	0125c723-c827-4a78-9e48-869aa5feb61f	GET	undefined	/favicon.ico
+20220301	23:50:34	83e47609-c96f-4820-ba46-46541b533282	POST	undefined	/register
+20220302	00:08:52	ca7245b5-c4bf-4af4-9660-270721d40143	POST	undefined	/register
