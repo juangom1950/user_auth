@@ -1,3 +1,4 @@
+// This is needed to be able to access environment variables
 require('dotenv').config();
 const express = require('express');
 const app = express();
