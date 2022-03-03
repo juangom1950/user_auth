@@ -1,13 +1,14 @@
-const usersDb = {
-  users: require("../model/users.json"),
-  setUsers: function (data) {
-    this.users = data;
-  },
-};
+// const usersDb = {
+//   users: require("../model/users.json"),
+//   setUsers: function (data) {
+//     this.users = data;
+//   },
+// };
 
+const User = require('../model/User');
 const jwt = require("jsonwebtoken");
 
-const handleRefreshToken = (req, res) => {
+const handleRefreshToken = async (req, res) => {
   // This cookie has been created when you did the authentication
   const cookies = req.cookies;
   // If do we have cookies check jwt
@@ -20,9 +21,12 @@ const handleRefreshToken = (req, res) => {
   //console.log(cookies.jwt);
   const refreshToken = cookies.jwt;
 
-  const foundUser = usersDb.users.find(
-    (person) => person.refreshToken === refreshToken
-  );
+  // const foundUser = usersDb.users.find(
+  //   (person) => person.refreshToken === refreshToken
+  // );
+
+  // refreshToken: refreshToken it is equal to just refreshToken.
+  const foundUser = await User.findOne({ refreshToken }).exec();
   if (!foundUser) return res.sendStatus(403); //Forbiden
 
   // evaluate jwt
